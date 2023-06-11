@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: none;
+  }
+  .card {
+    border-radius: 0;
+  }
+}
+
+#contents_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(var(--vh, 1vh) * 70);;
+}
+
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  #contents_wrapper {
+    height: calc(var(--vh, 1vh) * 80);;
+  }
+}
+
+#question_statement {
+  width: 50%;
+  overflow: auto;
+}
+
+#choices {
+  width: 50%;
+  overflow: auto;
+  background-color: #f2f7ff;
+  padding: 16px;
+  margin-left: 10px;
+}
+
+#instant_response_container {
+  margin-top: 20px;
+}
+
+body #choices input[type="radio"],
+body #choices input[type="checkbox"] {
+  display: none;
+}
+
+body#button #choices button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  body#true-false #choices .row {
+    width: 250px;
+    margin: auto;
+  }
+}
+
+body#textarea-report #form-textarea {
+  height: calc(var(--vh, 1vh) * 60);;
+}
+
+body#pulldown.no-before-question #question_statement {
+  width: 100%;
+}
+
+body#pulldown #question_statement .mdb-select {
+  max-width: 200px;
+}
+
+body#pulldown.no-before-question #choices {
+  display: none !important;
+}
+
+body#match #choices {
+  height: calc(var(--vh, 1vh) * 70); !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body#match #choices button.btn-match {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+body#match #choices li.match-li-width {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+body#match li.ui-draggable-dragging {
+  max-width: 300px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (min-width: 1150px) {
+  body#match button.btn-match {
+    width: 230px;
+  }
+  body#match li.match-li-width {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1150px) {
+  body#match button.btn-match {
+    width: 180px;
+  }
+  body#match li.match-li-width {
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+  body#match button.btn-match {
+    width: 135px;
+  }
+  body#match li.match-li-width {
+    width: 135px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  body#match button.btn-match {
+    min-width: 100px;
+  }
+  body#match li.match-li-width {
+    min-width: 100px;
+  }
+}
+
+body#match.iOS #choices {
+  height: 300px !important;
+}
+
+body#sort #choices {
+  padding: 0 5%;
+}
+
+body#sort #choices li.sort-li-width {
+  min-height: auto !important;
+  max-width: 100% !important;
+}
+
+body#sort li.ui-draggable-dragging {
+  min-height: auto !important;
+}
+
+@media screen and (orientation: landscape) {
+  body#wordbank #choices {
+    padding: 0 5%;
+  }
+}
+
+body#wordbank #choices span.drop-choice-list {
+  min-width: 100%;
+}
+
+body#wordbank #choices span.ui-draggable-handle {
+  width: 100%;
+}
+
+body#wordbank #question_statement span.ui-draggable-handle {
+  min-width: auto;
+  max-width: 250px;
+}
+
+body#wordbank span.ui-draggable-dragging {
+  max-width: 250px;
+}

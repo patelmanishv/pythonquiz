@@ -1,0 +1,756 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://quizgenerator.net/quizgen5.16.18/basic/css/jquery-ui-1.12.1.min.css" />
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/jquery.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/jquery.plugin.min.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/scrollbarTable-0.1.min.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/pagination.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/drawingboard.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/my-result.js"></script>
+<script type="text/javascript" src="https://quizgenerator.net/quizgen5.16.18/basic/js/file-submission.js"></script>
+<script type="text/javascript" src="js/player.js"></script>
+<script type="text/javascript" src="config.js"></script>
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/js/jquery-ui.1.12.0.min.js"></script>
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/js/jquery.ui.touch-punch.min.js"></script>
+<script>MathJax = {tex: {inlineMath: [['[#', '#]']]}, svg: {fontCache: 'global'}};</script>
+<script type="text/javascript" async src="https://quizgenerator.net/quizgen5.16.18/basic/mathjax/tex-svg.js"></script>
+<link rel="stylesheet" href="https://quizgenerator.net/quizgen5.16.18/basic/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="https://quizgenerator.net/quizgen5.16.18/basic/photoswipe/default-skin/default-skin.css">
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/photoswipe/photoswipe.js"></script>
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/js/popper.min.js"></script>
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/bootstrap.css">
+<link href="https://quizgenerator.net/quizgen5.16.18/basic/font-awesome/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/mdb.css"></link>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/mdb_custom.css"></link>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/pagination.css"></link>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/drawingboard.css"></link>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/my-result.css"></link>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/file-submission.css"></link>
+<link rel="stylesheet" type="text/css" href="https://quizgenerator.net/quizgen5.16.18/basic/css/base_style.css"></link>
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/js/fabric.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.getRegistrations().then(function (registrations) {
+
+return Promise.all(registrations.map(function (registration) {
+
+if (registration.scope.startsWith(`${window.location.origin}/assets/`)) {
+return registration.unregister();
+}
+}));
+}).then(function () {
+
+navigator.serviceWorker.register('./sw.js', { scope: './' });
+});
+}
+</script>
+<meta id="viewport" name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Loading...</title>
+
+</head>
+<body data-lang="en">
+<div class="page container" id="page_loading">
+Loading...
+</div><!-- / page_loading -->
+<div class="page container minh-100 card" id="page_intro" style="display:none">
+<section class="row card-body align-items-center">
+<div id="intro_wrapper" class="col-12">
+<div id="stamp" class="text-right">
+<i class="fas fa-award fa-6x"></i>
+</div>
+<big>
+<div id="intro_background" class="size_adjust text-center"></div>
+<div id="intro" class="size_adjust text-center"></div>
+</big>
+</div>
+</section>
+<section class="row justify-content-center card-body">
+<div class="col-12 col-md-6 col-lg-5">
+<div id="completion_rate_wrapper" class="size_adjust text-center">
+<div style="font-size:50px; -webkit-animation: fadeIn 1s ease 0s 1 normal;" id="completion_rate_label_wrapper">
+<span id="completion_rate"></span>%
+</div>
+<canvas id="doughnutChart" class=""></canvas>
+<script>
+var margin = 4;
+setInterval(function(){
+$("#completion_rate_label_wrapper").height($("#doughnutChart").height() - margin)
+.width($("#doughnutChart").width() - margin)
+.css("margin-bottom", -$("#doughnutChart").height() + margin)
+.css("line-height", ($("#doughnutChart").height() - margin) + "px");
+}, 100);
+</script>
+</div>
+</div>
+</section>
+<section class="row align-items-end">
+<div class="col-12">
+<button id="start_quiz_button" class="size_adjust btn btn-info btn-block btn-rounded waves-effect waves-light" onclick="start_quiz()">Start</button>
+</div>
+<div class="col-12">
+<button id="resume_quiz_button" class="size_adjust btn btn-warning btn-block btn-rounded waves-effect waves-light" onclick="start_quiz('resume')" style="display:none">Resume</button>
+</div>
+<div class="col-12">
+<button id="restart_quiz_button" class="size_adjust btn btn-primary btn-block btn-rounded waves-effect waves-light" onclick="start_quiz()" style="display:none">Restart</button>
+</div>
+<div class="col-6" data-toggle="tooltip" title="Done">
+<button id="start_quiz_button_not_answerd" class="size_adjust btn btn-success btn-block btn-rounded waves-effect waves-light" onclick="start_quiz('not_answerd')">Start</button>
+<button id="restart_quiz_button_not_answerd" class="size_adjust btn btn-success btn-block btn-rounded waves-effect waves-light" onclick="start_quiz('not_answerd')" style="display:none">Restart</button>
+</div>
+<div class="col-6" data-toggle="tooltip" title="You can access to this feature once you have done "Complete Mode"">
+<button id="start_quiz_button_weak" class="size_adjust btn btn-block btn-rounded waves-effect waves-light" onclick="start_quiz('weak')">Retry incorrect quizzes</button>
+</div>
+<div class="col-12" data-toggle="tooltip" title="You can access to this feature when the rates reach to 100%">
+<button id="start_quiz_button_review" class="size_adjust btn btn-primary btn-block btn-rounded waves-effect waves-light" onclick="start_quiz('review')">Review mode</button>
+</div>
+<div class="col-12">
+<button id="go_to_result_button" class="size_adjust btn btn-light btn-block btn-rounded waves-effect waves-light" onclick="show_result_from_intro()">Display the result screen</button>
+</div>
+</section>
+</div><!-- / page_intro -->
+<div class="page container minh-100 card" id="page_quiz" style="display:none;">
+<section id="question_header" class="size_adjust">
+<article class="row align-items-center navbar mb-3">
+<div class="col order-md-1 flex-end">
+<span id="help_button_show" class="fa-stack waves-effect help-btn" data-toggle="tooltip" data-placement="bottom" title="Click to show an explanation for each button" onclick="helpToolTipShow()">
+<i class="fas fa-circle fa-help-wrap-show fa-stack-1x"></i>
+<i class="fas fa-question fa-help-ch-show fa-stack-1x"></i>
+</span>
+<span id="help_button_hide" style="display: none;" class="fa-stack waves-effect help-btn" onclick="helpToolTipHide()">
+<i class="fas fa-circle fa-help-wrap-hide fa-stack-1x"></i>
+<i class="fas fa-question fa-help-ch-hide fa-stack-1x"></i>
+</span>
+<div class="tooltip-wrapper">
+<div id="suspend_button_wrapper">
+<button id="suspend_button" class="btn btn-sm btn-outline-warning waves-effect waves-light" onclick="suspend()">
+<span>Pause</span>
+</button>
+</div>
+<span class="tooltip-bottom tooltip-common suspend_tooltip">Pause and save the session</span>
+</div>
+<div class="tooltip-wrapper">
+<button id="hide_list_button" class="list btn btn-sm btn-primary waves-effect waves-light" onclick="show_list()">
+<i class="far fa-list-ul"></i>
+</button>
+<span class="tooltip-bottom tooltip-common">Go to the quiz list</span>
+</div>
+</div>
+<div class="col-12 col-md-7 col-lg-8 col-xl-9 tooltip-wrapper">
+<div id="question_count_wrapper" class="inset text-muted">
+<i id="question_count_page_icon" class="far fa-comment-dots fa-lg"></i>
+<div id="question_count_default">
+<span id="position" class="mr-1"></span>/<span id="question_count" class="ml-1"></span>
+</div>
+</div>
+<span class="tooltip-bottom tooltip-common">Click the number to see the quiz</span>
+<div id="pagination"></div>
+</div>
+</article>
+<div class="col-12">
+<div id="timer_wrap_quiz" class="tooltip-wrapper" style="width: 100%;">
+<span class="tooltip-bottom tooltip-common">Time limit</span>
+<div class="timer_wrapper inset text-muted" style="position:relative">
+<!-- height保持のためのt -->
+<i class="far fa-alarm-clock mr-1"></i><span style="visibility:hidden;">t</span>
+<!-- 縦書きレイアウトの横スクロール位置リセットバグ回避のためのiframe -->
+<iframe class="timer-frame" style="height:24px;width:160px;border:0;position:absolute;top:0;left:20px;"></iframe>
+</div>
+<div class="progress">
+<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+</div>
+<article class="row align-items-center">
+<div class="col-sm-8 col-12 mb-2 mb-sm-0">
+<div id="section_name"></div>
+</div>
+<div class="col-sm-4 col-12 text-right">
+<div class="tooltip-wrapper">
+<div id="seigo_count">
+<span id="correct-count">
+<i class="far text-success">Correct</i><span class="num"></span>
+</span>
+<span id="incorrect-count">
+<i class="far text-danger">Incorrect</i><span class="num"></span>
+</span>
+</div>
+<span class="tooltip-bottom tooltip-common text-left">No. of correct and incorrect answers</span>
+</div>
+<div id="section_tag" class="tag_visible"></div>
+<div id="question_tag" class="tag_visible" style="margin-top: 10px;"></div>
+</div>
+</article>
+</section>
+<section class="row card-body" style="min-height: 75%;">
+<div class="col-12" id="contents_wrapper">
+<div id="question_statement" > <div id="question" style="">Question</div></div>
+<hr />
+<div id="choices">
+<div id="before">
+<div id="before_question" class="alert alert-secondary clearfix"></div>
+</div>
+<div id="choice">
+<input class="choice_radio" type="radio" value="[[choice_key]]" id="[[choice_id]]" name="question"/>
+<label onclick="" for="[[choice_id]]" style="">
+<span class="choice_body">[[choice]]</span>
+</label>
+</div>
+<div id="choice_box">
+<input class="choice_radio" type="radio" value="[[choice_key]]" id="[[choice_id]]" name="question"/>
+<label onclick="" for="[[choice_id]]" style="">
+<span class="choice_body">[[choice]]</span>
+</label>
+</div>
+<div id="multi_choice">
+<input class="choice_checkbox" type="checkbox" value="[[choice_key]]" id="[[choice_id]]" name="question"/>
+<label onclick="" for="[[choice_id]]" style="">
+<span class="choice_body">[[choice]]</span>
+</label>
+</div>
+<div id="input">
+<article class="row">
+<div class="input-field col-12">
+<input id="input_line" class="input size_adjust validate" type="text" style="" autocomplete="off"/>
+<label for="input_line">Please enter your answer</label>
+<div class="numeric_error_message" style="display:none; color:red;">*Please enter integers.</div>
+<div class="input_limit_error_message" style="display:none; color:red;">*Exceeded the maximum number of characters.</div>
+</div>
+</article>
+</div>
+<div id="textarea">
+<div class="md-form">
+<i class="fas fa-pencil prefix"></i>
+<textarea type="text" id="form-textarea" class="md-textarea" style="" autocomplete="off"></textarea>
+<label for="form-textarea">Please enter your answer</label>
+</div>
+</div>
+<div id="textarea_drawingboard">
+<div class="drawingboard">
+<div class="drawingboard-toolbar" role="toolbar">
+<button id="drawingboard-pencil-button" class="drawingboard-toolbar__btn">
+<i class="fas fa-pencil fa-fw"></i>
+Draw
+</button>
+<button id="drawingboard-eraser-button" class="drawingboard-toolbar__btn">
+<i class="fas fa-eraser fa-fw"></i>
+Eraser
+</button>
+<button id="drawingboard-undo-button" class="drawingboard-toolbar__btn">
+<i class="fas fa-reply fa-fw"></i>
+Redo
+</button>
+<button id="drawingboard-redo-button" class="drawingboard-toolbar__btn">
+<i class="fas fa-share fa-fw"></i>
+Undo
+</button>
+<button id="drawingboard-clear-button" class="drawingboard-toolbar__btn">
+<i class="far fa-sticky-note fa-fw"></i>
+Redo
+</button>
+</div>
+<div id="drawingboard-canvas-wrapper" class="drawingboard-canvas__wrapper">
+<div id="drawingboard-canvas-placeholder" class="drawingboard-canvas__placeholder">
+<i class="fas fa-pencil fa-fw"></i> Free-drawing in this board.
+</div>
+<canvas id="drawingboard-canvas"></canvas>
+</div>
+</div>
+</div>
+<!-- ファイル提出 -->
+<div id="file_submission" class="form-group">
+<label style="font-weight:700;">Submitted file<br><span id="upload-hosoku" style="font-size: 14px;font-weight: normal">[Limit]Up to <span class="number-limit"></span> files｜ Per file<span class="size-limit"></span>(Total:<span class="total-size-limit"></span>)</span></label>
+<p id="errorMessageForUpload" class="text-danger"></p>
+<ul id="reportUpload" class="list-group">
+</ul>
+<label id="file-upload-wrapper">
+<span id="file-upload" class="btn btn-primary">
+<i class="far fa-upload fa-fw"></i>
+<i class="fas fa-sync-alt fa-fw fa-spin"></i>
+Upload file
+<input class="file-input" type="file" style="display:none">
+</span>
+</label>
+</div>
+<div id="fill_in_multi">
+<table width=100%>
+<tr><td width=20><div class="pos0" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos0"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos1" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos1"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos2" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos2"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos3" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos3"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos4" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos4"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos5" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos5"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos6" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos6"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos7" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos7"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos8" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos8"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos9" ></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos9"  type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos10"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos10" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos11"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos11" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos12"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos12" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos13"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos13" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos14"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos14" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos15"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos15" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos16"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos16" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos17"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos17" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos18"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos18" type="text" style=""/></td></tr>
+<tr><td width=20><div class="pos19"></div></td><td><input class="input fill_in_multi size_adjust js-fill-in-multi-input pos19" type="text" style=""/></td></tr>
+</table>
+<div class="numeric_error_message" style="display:none; color:red;">※半角数字で入力してください。</div>
+<div class="input_limit_error_message" style="display:none; color:red;">※入力文字数が上限に達しました。</div>
+</div>
+<div id="button">
+<button class="btn btn-outline-primary btn-block btn-rounded waves-effect" id="[[choice_id]]" onclick="button_click('[[choice_key_js_escaped]]')" style="">[[choice]]</button>
+<div class="select-mark button">
+Selected
+</div>
+</div>
+<div id="true_false">
+<div class="row">
+<div id="choice_true" class="col-6 no-padding-right">
+<button class="btn btn-success btn-block left-radius" onclick="button_click('true')">
+<i class="far">True</i>
+</button>
+<div class="select-mark">
+Selected
+</div>
+</div>
+<div id="choice_false" class="col-6 no-padding-left">
+<button class="btn btn-danger btn-block right-radius" onclick="button_click('false')">
+<i class="far">False</i>
+</button>
+<div class="select-mark">
+Selected
+</div>
+</div>
+</div>
+</div>
+<div id="sort">
+<div class="drop-choice"><li class="drag-choice sort-li-width btn btn-outline-info btn-block" style="">[[choice]]<i class="fas fa-align-justify" aria-hidden="true"></i><input type="hidden" class="drag-value" value="[[choice_key]]" /></li></div>
+</div>
+<div id="match">
+<table>
+<tr class="drop-group">
+<td class="match_key_cell">
+<div class="drop-choice-key match-li-width text-right" style=""><button class="btn btn-mdb btn-match left-radius no-drop">[[match_key]]</button></div>
+</td>
+<td class="drog_choice_cell">
+<div class="drop-choice" style="float:left;" id="[[choice_id]]">
+<li class="drag-choice match-li-width btn btn-outline-info btn-match waves-effect right-radius" style="">[[choice]]<input type="hidden" class="drag-value" value="[[choice_key]]" /></li>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="wordbank">
+<span class="drop-choice-list">
+<span class="drag-choice-wordbank btn btn-outline-primary waves-effect" style="">[[choice]]<input type="hidden" class="drag-value" value="[[choice_key]]" /><span class="drop-index" style="display:none;">[[choice_idx]]</span></span>
+</span>
+</div>
+<div id="pulldown">
+pulldown
+</div>
+</div>
+</div>
+<div class="col-12">
+<div id="instant_response_container" class="card" style="display:none;">
+<div id="instant_answer_wrapper" class="card-title" style="display:none">Correct answer:<span id="instant_answer_msg"></span></div>
+<div id="instant_feedback_wrapper" class="card-body" style="display:none"><span id="instant_feedback_msg"></span></div>
+</div>
+<div id="answer_mark" style="pointer-events:none">
+<div id="answer_mark_correct" class="far fa-5x text-success">Correct</div>
+<div id="answer_mark_incorrect" class="far fa-5x text-danger">Incorrect</div>
+</div>
+
+<div class="speaker" style="width:0;height:0;">
+<audio id="correct_sound" src="https://quizgenerator.net/quizgen5.16.18/basic/get.mp3" preload="auto"/>
+
+</div>
+<div class="speaker" style="width:0;height:0;">
+<audio id="incorrect_sound" src="https://quizgenerator.net/quizgen5.16.18/basic/koke.mp3" preload="auto"/>
+
+</div>
+<div class="speaker" style="width:0;height:0;">
+<audio id="dragged_sound" src="https://quizgenerator.net/quizgen5.16.18/basic/move.mp3" preload="auto"/>
+
+</div>
+</div>
+</section>
+<section class="row h-10 card-body" style="z-index: 2;">
+<div class="col-12 align-self-end" style="padding:0;">
+<div id="js-movable-btn-container" class="d-flex justify-content-between">
+<div class="tooltip-wrapper">
+<button onclick="display_prev_quiz()" id="display_prev_quiz" class="btn btn-info waves-effect waves-light btn-sm left-radius">
+<i class="fas fa-angle-left"></i>
+</button>
+<span class="tooltip-top tooltip-common">Prev</span>
+<button onclick="display_prev_quiz()" id="display_prev_explanation_page" class="btn btn-outline-info waves-effect waves-light btn-sm left-radius">
+<i class="fas fa-angle-left"></i>
+</button>
+<span class="tooltip-top tooltip-common">Prev</span>
+</div>
+<div class="tooltip-wrapper">
+<button onclick="display_next_quiz()" id="display_next_quiz" class="btn btn-info waves-effect btn-sm waves-light right-radius">
+<i class="fas fa-angle-right"></i>
+</button>
+<span class="tooltip-top tooltip-common">Next</span>
+<button onclick="display_next_quiz()" id="display_next_explanation_page" class="btn btn-outline-info waves-effect btn-sm waves-light right-radius">
+<i class="fas fa-angle-right"></i>
+</button>
+<span class="tooltip-top tooltip-common">Next</span>
+</div>
+</div>
+<div id="buttons">
+<button onclick="check_answer()" id="check_answer_button" class="btn btn-primary waves-effect waves-light" style="float:right" >Submit</button>
+<button onclick="display_next_quiz()" id="check_answer_next_button" style="display:none;float:right" class="btn btn-primary waves-effect waves-light right-radius">Next</button>
+<div class="tooltip-wrapper" style="float:right">
+<button onclick="mark_quiz()" id="not_disp_answer_mark_button" class="btn btn-primary waves-effect waves-light">
+Mark
+</button>
+<span class="tooltip-left tooltip-common">Submit</span>
+</div>
+<button onclick="check_choiced_next_quiz()" id="not_disp_answer_next_button" style="float:right" class="btn btn-primary waves-effect waves-light right-radius">Next</button>
+<button onclick="show_result()" id="show_result" style="display:none;float:right;" class="btn btn-primary waves-effect waves-light">Result</button>
+<button onclick="show_result()" id="abort_quiz" style="float:right;display:none" class="btn btn-primary waves-effect waves-light">Quit</button>
+</div>
+</div>
+</section>
+</div><!-- / page_quiz -->
+
+<div class="page container minh-100 card" id="page_list" style="display:none">
+<section class="row align-items-center navbar mb-3">
+<div class="col-6 ml-auto">
+<div id="question_header" class="size_adjust">
+<div id="timer_wrap_list" data-toggle="tooltip" data-placement="bottom" title="Time limit">
+<div class="timer_wrapper inset text-muted" style="position:relative">
+<!-- height保持のためのt -->
+<i class="far fa-alarm-clock mr-1"></i><span style="visibility:hidden;">t</span>
+<!-- 縦書きレイアウトの横スクロール位置リセットバグ回避のためのiframe -->
+<iframe class="timer-frame" style="height:24px;width:160px;border:0;position:absolute;top:0;left:20px;"></iframe>
+</div>
+<div class="progress">
+<div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-3 text-right">
+<button id="back_to_question" class="list btn btn-sm btn-primary waves-effect waves-light" onclick="hide_list()" data-toggle="tooltip" data-placement="bottom" title="Go back to the quiz"><i class="fas fa-pen"></i></button>
+</div>
+</section>
+<section class="row card-body">
+<div class="table-responsive w-100">
+<table class="qtable table table-sm" id="result_table1">
+<thead>
+<tr class="bg-primary color-white">
+<th class="no" style="">No</th>
+<th class="student_response" style="">Your answer:</th>
+<th class="scoreStr" style="">Scores</th>
+<th class="result" style="">Result</th>
+<th class="button"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="result_detail">
+<td class="no" style=""></td>
+<td class="student_response" style=""></td>
+<td class="scoreStr" style=""></td>
+<td class="result" style=""></td>
+<td class="button pageListButton"><button class="list_to_quiz btn btn-primary btn-sm">Go</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div><!-- / page_list -->
+
+<div class="page container minh-100 card" id="page_suspended" style="display:none">
+<section class="interrupted-text">
+Paused
+</section>
+<section class="row card-body">
+<div class="col-12">
+<button onclick="restart()" id="interrupted_restart_button" class="size_adjust btn btn-primary btn-rounded btn-sm btn-block" style="">　Retry　</button>
+</div>
+</section>
+</div><!-- / page_suspended -->
+<div class="page container minh-100 card" id="page_result" style="display:none">
+<section class="row card-title">
+<div class="col-12">
+<div id="messages_passed_head">
+<h2 id="messages_passed_title"></h2>
+<p id="messages_passed_body"></p>
+</div>
+</div>
+</section>
+<section class="row card-body">
+<div class="table-responsive w-100">
+<table class="qtable size_adjust table table-sm" id="summary_table_master">
+<thead>
+<tr style="" class="bg-primary color-white">
+<th style="">Scores</th>
+<th style="">Completion rate</th>
+<th style="">Goal</th>
+<th style="">Status</th>
+</tr>
+<tr style="">
+<td style="" class="score"></td>
+<td style="" class="progressBody"></td>
+<td style="" class="passing_score"></td>
+<td style="" class="result"></td>
+</tr>
+</thead>
+</table>
+</div>
+<div class="table-responsive w-100">
+<table class="qtable size_adjust table table-sm" id="summary_table_normal">
+<thead>
+<tr style="" class="bg-primary color-white">
+<th style="">Scores</th>
+<th style="">Pass scores</th>
+<th style="">Result</th>
+</tr>
+<tr style="">
+<td style="" class="score"></td>
+<td style="" class="passing_score"></td>
+<td style="" class="result"></td>
+</tr>
+</thead>
+</table>
+</div>
+</section>
+<section class="row card-body result_table2_box">
+<div class="table-responsive">
+<table class="qtable size_adjust table table-sm" id="result_table2">
+<thead>
+<tr class="bg-primary color-white">
+<th class="no" style="">No</th>
+<th class="student_response" style="">Your answer:</th>
+<th class="scoreStr" style="">Scores</th>
+<th class="result" style="">Result</th>
+<th class="button" style=""></th>
+<th class="backToQuestionHead" style="">Review</th>
+</tr>
+</thead>
+<tbody>
+<tr class="result_detail">
+<td class="no" style=""></td>
+<td class="student_response" style=""></td>
+<td class="scoreStr" style=""></td>
+<td class="result" style=""></td>
+<td class="button" style=""></td>
+<td class="backToQuestion" style=""><input type=button value=Show class="review_quiz btn btn-primary btn-sm" style=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="row card-body">
+<div class="page_result--restart_button_list col-12">
+<div class="row">
+<div class="col-12">
+<button onclick="restart()" id="restart_button" class="size_adjust btn btn-primary btn-rounded btn-sm btn-block" style="">　Retry　</button>
+</div>
+<div class="col-12">
+<button onclick="gotoCertificate()" id="goto_certificate_button" class="size_adjust btn btn-primary btn-rounded btn-sm btn-block" style="">　Show the certificate　</button>
+</div>
+</div>
+</div>
+<div class="page_result--start_button_list col-12" style="display:none">
+<div class="row">
+<div class="col-12">
+<button id="start_quiz_button" class="size_adjust btn btn-info btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result()">Start</button>
+</div>
+<div class="col-12">
+<button id="resume_quiz_button" class="size_adjust btn btn-warning btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result('resume')" style="display:none">Resume</button>
+</div>
+<div class="col-12">
+<button id="restart_quiz_button" class="size_adjust btn btn-primary btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result()" style="display:none">Restart</button>
+</div>
+<div class="col-6" data-toggle="tooltip" title="Done">
+<button id="start_quiz_button_not_answerd" class="size_adjust btn btn-success btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result('not_answerd')">Start</button>
+<button id="restart_quiz_button_not_answerd" class="size_adjust btn btn-success btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result('not_answerd')" style="display:none">Restart</button>
+</div>
+<div class="col-6" data-toggle="tooltip" title="You can access to this feature once you have done "Complete Mode"">
+<button id="start_quiz_button_weak" class="size_adjust btn btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result('weak')">Retry incorrect quizzes</button>
+</div>
+<div class="col-12" data-toggle="tooltip" title="You can access to this feature when the rates reach to 100%">
+<button id="start_quiz_button_review" class="size_adjust btn btn-primary btn-block btn-rounded waves-effect waves-light" onclick="start_quiz_from_result('review')">Review mode</button>
+</div>
+</div>
+</div>
+</section>
+</div><!-- / page_result -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="pswp__bg"></div>
+<div class="pswp__scroll-wrap">
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- セクション移動確認モーダル・ダイアログ -->
+<div class="modal fade" id="move-section-confirmation-modal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Move sections</h4>
+<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+</div>
+<div class="modal-body">
+<p class="message1">Are there any questions in the following sections that you have not answered yet or that you are unsure of your choice?</p>
+<p class="message2">Once you have moved to the selected section, you will not be able to return to the following section.</p>
+<div class="section-list"></div>
+</div>
+<div class="modal-footer flex-column-reverse flex-sm-row">
+<button type="button" class="btn btn-light btn-block m-2" data-dismiss="modal">Cancel</button>
+<button type="button" id="move-section-confirmation-button" class="btn btn-primary btn-block m-2">Move section</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 自分の回答表示モーダル・ダイアログ -->
+<div class="modal fade" id="my-result-modal" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title"></h4>
+<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+</div>
+<div class="modal-body">
+<div class="move-btns row hidden-xs hidden-sm">
+<div class="col-sm-5">
+<button type="button" class="btn btn-default2 btn btn-block" id="newButton" style="display: block;">&lt;&lt; New answer</button>
+</div>
+<div class="col-sm-2" style="text-align:center;">
+<span class="lecture-count-position" style="line-height: 36px; display: inline;"></span>
+</div>
+<div class="col-sm-5">
+<button type="button" class="btn btn-default2 btn btn-block" id="oldButton" style="display: block;">Previous answer &gt;&gt;</button>
+</div>
+</div>
+<div class="result-body row"></div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-light btn-block" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- メディア再生確認モーダル・ダイアログ -->
+<div class="modal fade" id="play-media-confirmation-modal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Are you sure to play?</h4>
+<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+</div>
+<div class="modal-body">
+<p>Play the selected media after stopping the current media.</p>
+</div>
+<div class="modal-footer flex-column-reverse flex-sm-row">
+<button type="button" class="btn btn-light btn-block m-2" data-dismiss="modal">Cancel</button>
+<button type="button" id="play-media-confirmation-button" class="btn btn-primary btn-block m-2">Play</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- 外部リンク確認モーダル・ダイアログ -->
+<div class="modal fade" id="exlink-confirmation-modal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">Confirmation</h4>
+<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+</div>
+<div class="modal-body">
+<p></p>
+</div>
+<div class="modal-footer flex-column-reverse flex-sm-row">
+<button type="button" class="btn btn-light btn-block m-2" data-dismiss="modal">Cancel</button>
+<button type="button" id="exlink-confirmation-button" class="btn btn-primary btn-block m-2">OK</button>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+<script src="https://quizgenerator.net/quizgen5.16.18/basic/js/mdb.js"></script>
+
+
+
+</html>

@@ -1,0 +1,1113 @@
+@charset "UTF-8";
+@media screen and (max-width: 1199px) {
+  .container {
+    max-width: none;
+  }
+
+  .card {
+    border-radius: 0;
+  }
+}
+#contents_wrapper {
+  font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体",
+    "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "MS PMincho",
+    "ＭＳ 明朝", "MS Mincho", serif;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  height: calc(var(--vh, 1vh) * 70);;
+}
+
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  #contents_wrapper {
+    height: calc(var(--vh, 1vh) * 80);;
+  }
+}
+#question_statement {
+  width: 66.6666%;
+  overflow-x: auto;
+}
+
+#choices {
+  width: 33.3333%;
+  padding-right: 16px;
+  overflow: auto;
+  background-color: #f2f7ff;
+}
+
+body #choices input[type="radio"],
+body #choices input[type="checkbox"] {
+  display: none;
+}
+body #choices input[type="radio"] + label,
+body #choices input[type="checkbox"] + label {
+  padding-left: 0;
+  height: 100%;
+}
+body#sa #choices,
+body#ma #choices {
+  padding: 2%;
+}
+body#sa #choices p,
+body#ma #choices p {
+  margin-top: 25px;
+}
+body#sa .choice + .choice,
+body#ma .choice + .choice {
+  margin-right: 10px;
+}
+body#sa [type="radio"] + label::before,
+body#sa [type="radio"] + label::after {
+  left: auto;
+  right: 9px;
+}
+body#ma [type="radio"] + label::before,
+body#ma [type="radio"] + label::after {
+  left: auto;
+  right: 9px;
+}
+body#sa.is-Firefox [type="radio"] + label::before,
+body#sa.is-Firefox [type="radio"] + label::after {
+  right: 6px;
+}
+body#ma.is-Firefox [type="radio"] + label::before,
+body#ma.is-Firefox [type="radio"] + label::after {
+  right: 6px;
+}
+body#sa [type="checkbox"] + label::before,
+body#ma [type="checkbox"] + label::before {
+  left: auto;
+}
+body#sa.is-Chrome [type="checkbox"] + label::before,
+body#sa.is-Safari [type="checkbox"] + label::before {
+  right: 11px;
+}
+body#ma.is-Chrome [type="checkbox"] + label::before,
+body#ma.is-Safari [type="checkbox"] + label::before {
+  right: 11px;
+}
+body#sa.is-Chrome [type="checkbox"]:checked + label::before,
+body#sa.is-Safari [type="checkbox"]:checked + label::before {
+  right: 20px;
+}
+body#ma.is-Chrome [type="checkbox"]:checked + label::before,
+body#ma.is-Safari [type="checkbox"]:checked + label::before {
+  right: 20px;
+}
+body#sa.is-Firefox [type="checkbox"] + label::before,
+body#ma.is-Firefox [type="checkbox"] + label::before {
+  right: 9px;
+}
+body#sa.is-Firefox [type="checkbox"]:checked + label::before,
+body#ma.is-Firefox [type="checkbox"]:checked + label::before {
+  right: 18px;
+}
+body#sa.is-Edge [type="checkbox"] + label::before {
+  right: 9px;
+}
+body#ma.is-Edge [type="checkbox"] + label::before {
+  right: 9px;
+}
+body#sa.is-Edge [type="checkbox"]:checked + label::before {
+  right: 12px;
+}
+body#ma.is-Edge [type="checkbox"]:checked + label::before {
+  right: 12px;
+}
+body#sort #choices {
+  padding: 2%;
+}
+body#sort #choices .drag-choice {
+  max-width: none !important;
+}
+body#sort.iOS #choices {
+  padding-bottom: 40px;
+}
+body#sort .drag-choice {
+  text-align: left;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  min-width: 3em;
+  max-height: calc(var(--vh, 1vh) * 70);;
+  padding: 40px 10px 10px;
+  margin: 0 5px;
+}
+body#sort .drag-choice > i {
+  top: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  right: auto;
+}
+body#true-false #choices {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  position: absolute;
+  left: 20%;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  padding: 0;
+  width: calc(var(--vh, 1vh) * 70);;
+}
+body#true-false #choices > .row {
+  margin: 0;
+}
+body#true-false.is-Chrome #choices,
+body#true-false.is-Safari #choices,
+body#true-false.is-Firefox #choices {
+  top: 0;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+}
+body#true-false.is-Edge #choices {
+  bottom: 100%;
+  -webkit-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+body#button #choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  padding: 2%;
+}
+body#button #choices button {
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  padding: 10px;
+  border-radius: 10px;
+}
+body#button .choice {
+  margin: 1%;
+}
+body#button.is-Chrome #choices,
+body#button.is-Safari #choices {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  padding: 2%;
+  overflow: auto;
+}
+body#button.is-Chrome #choices .choice,
+body#button.is-Safari #choices .choice {
+  margin: 2%;
+}
+body#button.is-Chrome #choices button,
+body#button.is-Safari #choices button {
+  width: 3em;
+}
+body#button:not(.is-Chrome):not(.is-Safari) #choices {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+body#match .btn-match {
+  text-align: left;
+  padding: 1rem !important;
+}
+body#match.is-Chrome #choices,
+body#match.is-Safari #choices {
+  position: absolute;
+  left: 33%;
+  top: 0;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  padding: 2%;
+  width: calc(var(--vh, 1vh) * 70);;
+  overflow: auto;
+}
+body#match.is-Chrome #choices .match_key_cell > *,
+body#match.is-Chrome #choices .drog_choice_cell > * {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#match.is-Safari #choices .match_key_cell > *,
+body#match.is-Safari #choices .drog_choice_cell > * {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#match.is-Chrome #choices .btn-match,
+body#match.is-Safari #choices .btn-match {
+  width: calc(var(--vh, 1vh) * 30);;
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#match.is-Chrome #choices .left-radius,
+body#match.is-Safari #choices .left-radius {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+body#match.is-Chrome #choices .right-radius,
+body#match.is-Safari #choices .right-radius {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+body#match.is-Chrome.iOS .match_key_cell > *,
+body#match.is-Chrome.iOS .drog_choice_cell > * {
+  -webkit-writing-mode: initial !important;
+  -ms-writing-mode: initial !important;
+  writing-mode: initial !important;
+}
+body#match.is-Chrome.iPadOS .match_key_cell > *,
+body#match.is-Chrome.iPadOS .drog_choice_cell > * {
+  -webkit-writing-mode: initial !important;
+  -ms-writing-mode: initial !important;
+  writing-mode: initial !important;
+}
+body#match.is-Safari.iOS .match_key_cell > *,
+body#match.is-Safari.iOS .drog_choice_cell > * {
+  -webkit-writing-mode: initial !important;
+  -ms-writing-mode: initial !important;
+  writing-mode: initial !important;
+}
+body#match.is-Safari.iPadOS .match_key_cell > *,
+body#match.is-Safari.iPadOS .drog_choice_cell > * {
+  -webkit-writing-mode: initial !important;
+  -ms-writing-mode: initial !important;
+  writing-mode: initial !important;
+}
+body#match.is-Chrome.iOS .btn-match,
+body#match.is-Chrome.iPadOS .btn-match {
+  font-size: 0 !important;
+  text-align: left;
+  padding: 30px 20px 0 !important;
+}
+body#match.is-Safari.iOS .btn-match,
+body#match.is-Safari.iPadOS .btn-match {
+  font-size: 0 !important;
+  text-align: left;
+  padding: 30px 20px 0 !important;
+}
+body#match.is-Chrome.iOS .btn-match::after,
+body#match.is-Chrome.iPadOS .btn-match::after {
+  content: attr(data-text);
+  font-size: 16px;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#match.is-Safari.iOS .btn-match::after,
+body#match.is-Safari.iPadOS .btn-match::after {
+  content: attr(data-text);
+  font-size: 16px;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#match.is-Safari.macOS .match_key_cell > *,
+body#match.is-Safari.macOS .drog_choice_cell > * {
+  -webkit-writing-mode: initial !important;
+  -ms-writing-mode: initial !important;
+  writing-mode: initial !important;
+}
+body#match.is-Safari.macOS .btn-match {
+  font-size: 0 !important;
+  text-align: left;
+  padding: 30px 20px 0 !important;
+}
+body#match.is-Safari.macOS .btn-match::after {
+  content: attr(data-text);
+  font-size: 16px;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#match:not(.is-Chrome):not(.is-Safari) #choices {
+  padding: 2%;
+}
+body#match:not(.is-Chrome):not(.is-Safari) #choices .drop-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+body#match:not(.is-Chrome):not(.is-Safari) #choices .drop-choice {
+  float: none !important;
+}
+body#match:not(.is-Chrome):not(.is-Safari) #choices .btn-match {
+  height: calc(var(--vh, 1vh) * 30);;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+body#match:not(.is-Chrome):not(.is-Safari) #choices .left-radius {
+  border-radius: 10px 10px 0 0;
+}
+body#match:not(.is-Chrome):not(.is-Safari) #choices .right-radius {
+  border-radius: 0 0 10px 10px;
+}
+body#match .btn-match.ui-draggable-dragging {
+  border-radius: 0 0 10px 10px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  height: calc(var(--vh, 1vh) * 30);;
+}
+body#wordbank .choice,
+body#fill-in .choice,
+body#fill-in-plus .choice,
+body#fill-in-multi .choice,
+body#textarea-enquete .choice,
+body#pulldown .choice {
+  width: 100%;
+}
+body#wordbank .drag-choice-wordbank,
+body#textarea-enquete .drag-choice-wordbank,
+body#pulldown .drag-choice-wordbank {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0.76rem;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#wordbank .drop-choice-wordbank,
+body#textarea-enquete .drop-choice-wordbank,
+body#pulldown .drop-choice-wordbank {
+  -webkit-writing-mode: horizontal-tb;
+  -ms-writing-mode: lr-tb;
+  writing-mode: horizontal-tb;
+}
+body#wordbank .wordbank-key,
+body#textarea-enquete .wordbank-key,
+body#pulldown .wordbank-key {
+  padding: 2rem 0.4rem;
+}
+body#wordbank.is-Chrome #choices,
+body#wordbank.is-Safari #choices {
+  position: relative;
+}
+body#fill-in #choices,
+body#fill-in-plus #choices,
+body#fill-in-multi #choices {
+  -webkit-writing-mode: horizontal-tb;
+  -ms-writing-mode: lr-tb;
+  writing-mode: horizontal-tb;
+  padding: 1rem;
+  height: 100%;
+}
+body#textarea-enquete.is-Chrome #choices,
+body#textarea-enquete.is-Safari #choices {
+  position: relative;
+}
+body#pulldown.is-Chrome #choices,
+body#pulldown.is-Safari #choices {
+  position: relative;
+}
+body#wordbank.is-Chrome #choices table,
+body#wordbank.is-Safari #choices table {
+  position: relative;
+}
+body#textarea-enquete.is-Chrome #choices table,
+body#textarea-enquete.is-Safari #choices table {
+  position: relative;
+}
+body#pulldown.is-Chrome #choices table,
+body#pulldown.is-Safari #choices table {
+  position: relative;
+}
+body#wordbank.is-Chrome #choices tbody,
+body#wordbank.is-Safari #choices tbody {
+  position: absolute;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0px;
+  left: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 15px;
+}
+body#textarea-enquete.is-Chrome #choices tbody,
+body#textarea-enquete.is-Safari #choices tbody {
+  position: absolute;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0px;
+  left: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 15px;
+}
+body#pulldown.is-Chrome #choices tbody,
+body#pulldown.is-Safari #choices tbody {
+  position: absolute;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  top: 0px;
+  left: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding: 15px;
+}
+body#wordbank.is-Chrome #choices tr,
+body#wordbank.is-Safari #choices tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+body#textarea-enquete.is-Chrome #choices tr,
+body#textarea-enquete.is-Safari #choices tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+body#pulldown.is-Chrome #choices tr,
+body#pulldown.is-Safari #choices tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+body#wordbank.is-Chrome #choices td:first-of-type,
+body#wordbank.is-Safari #choices td:first-of-type {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#textarea-enquete.is-Chrome #choices td:first-of-type,
+body#textarea-enquete.is-Safari #choices td:first-of-type {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#pulldown.is-Chrome #choices td:first-of-type,
+body#pulldown.is-Safari #choices td:first-of-type {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#wordbank.is-Chrome #choices input,
+body#wordbank.is-Chrome #choices textarea {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: none;
+  width: calc(var(--vh, 1vh) * 60);;
+}
+body#wordbank.is-Safari #choices input,
+body#wordbank.is-Safari #choices textarea {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: none;
+  width: calc(var(--vh, 1vh) * 60);;
+}
+body#textarea-enquete.is-Chrome #choices input,
+body#textarea-enquete.is-Chrome #choices textarea {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: none;
+  width: calc(var(--vh, 1vh) * 60);;
+}
+body#textarea-enquete.is-Safari #choices input,
+body#textarea-enquete.is-Safari #choices textarea {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: none;
+  width: calc(var(--vh, 1vh) * 60);;
+}
+body#pulldown.is-Chrome #choices input,
+body#pulldown.is-Chrome #choices textarea {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: none;
+  width: calc(var(--vh, 1vh) * 60);;
+}
+body#pulldown.is-Safari #choices input,
+body#pulldown.is-Safari #choices textarea {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  border-top: 1px solid #bdbdbd;
+  border-bottom: none;
+  width: calc(var(--vh, 1vh) * 60);;
+}
+body#wordbank.is-Chrome #choices input:focus:not([readonly]),
+body#wordbank.is-Chrome #choices textarea:focus:not([readonly]) {
+  border-top: 1px solid #4285f4;
+  border-bottom: none;
+  box-shadow: 0 -1px 0 0 #4285f4;
+}
+body#wordbank.is-Safari #choices input:focus:not([readonly]),
+body#wordbank.is-Safari #choices textarea:focus:not([readonly]) {
+  border-top: 1px solid #4285f4;
+  border-bottom: none;
+  box-shadow: 0 -1px 0 0 #4285f4;
+}
+body#textarea-enquete.is-Chrome #choices input:focus:not([readonly]),
+body#textarea-enquete.is-Chrome #choices textarea:focus:not([readonly]) {
+  border-top: 1px solid #4285f4;
+  border-bottom: none;
+  box-shadow: 0 -1px 0 0 #4285f4;
+}
+body#textarea-enquete.is-Safari #choices input:focus:not([readonly]),
+body#textarea-enquete.is-Safari #choices textarea:focus:not([readonly]) {
+  border-top: 1px solid #4285f4;
+  border-bottom: none;
+  box-shadow: 0 -1px 0 0 #4285f4;
+}
+body#pulldown.is-Chrome #choices input:focus:not([readonly]),
+body#pulldown.is-Chrome #choices textarea:focus:not([readonly]) {
+  border-top: 1px solid #4285f4;
+  border-bottom: none;
+  box-shadow: 0 -1px 0 0 #4285f4;
+}
+body#pulldown.is-Safari #choices input:focus:not([readonly]),
+body#pulldown.is-Safari #choices textarea:focus:not([readonly]) {
+  border-top: 1px solid #4285f4;
+  border-bottom: none;
+  box-shadow: 0 -1px 0 0 #4285f4;
+}
+body#wordbank.is-Chrome #choices .md-form,
+body#wordbank.is-Safari #choices .md-form {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  top: 1rem;
+  left: 90%;
+  left: calc(100% - 32px);
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#textarea-enquete.is-Chrome #choices .md-form,
+body#textarea-enquete.is-Safari #choices .md-form {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  top: 1rem;
+  left: 90%;
+  left: calc(100% - 32px);
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#pulldown.is-Chrome #choices .md-form,
+body#pulldown.is-Safari #choices .md-form {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  top: 1rem;
+  left: 90%;
+  left: calc(100% - 32px);
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#wordbank.is-Chrome #choices .md-form > *,
+body#wordbank.is-Safari #choices .md-form > * {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#textarea-enquete.is-Chrome #choices .md-form > *,
+body#textarea-enquete.is-Safari #choices .md-form > * {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#pulldown.is-Chrome #choices .md-form > *,
+body#pulldown.is-Safari #choices .md-form > * {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#wordbank.is-Chrome #choices .md-form label.active,
+body#wordbank.is-Safari #choices .md-form label.active {
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+body#textarea-enquete.is-Chrome #choices .md-form label.active,
+body#textarea-enquete.is-Safari #choices .md-form label.active {
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+body#pulldown.is-Chrome #choices .md-form label.active,
+body#pulldown.is-Safari #choices .md-form label.active {
+  -webkit-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+body#wordbank.is-Chrome #choices .input-field,
+body#wordbank.is-Safari #choices .input-field {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  left: 90%;
+  left: calc(100% - 32px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#textarea-enquete.is-Chrome #choices .input-field,
+body#textarea-enquete.is-Safari #choices .input-field {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  left: 90%;
+  left: calc(100% - 32px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#pulldown.is-Chrome #choices .input-field,
+body#pulldown.is-Safari #choices .input-field {
+  position: absolute;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  left: 90%;
+  left: calc(100% - 32px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+body#wordbank.is-Chrome #choices .input-field > *,
+body#wordbank.is-Safari #choices .input-field > * {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#textarea-enquete.is-Chrome #choices .input-field > *,
+body#textarea-enquete.is-Safari #choices .input-field > * {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#pulldown.is-Chrome #choices .input-field > *,
+body#pulldown.is-Safari #choices .input-field > * {
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices table,
+body#fill-in:not(.is-Chrome):not(.is-Safari) #choices table,
+body#fill-in-plus:not(.is-Chrome):not(.is-Safari) #choices table,
+body#fill-in-multi:not(.is-Chrome):not(.is-Safari) #choices table,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices table,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices table {
+  height: 100%;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices tbody,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices tbody,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices tr,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices tr,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices tr {
+  padding: 15px 0;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices td,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices td,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices td {
+  width: auto;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices td:first-of-type,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices td:first-of-type,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices td:first-of-type {
+  -webkit-writing-mode: horizontal-tb;
+  -ms-writing-mode: lr-tb;
+  writing-mode: horizontal-tb;
+  height: 2em;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices td:nth-of-type(2),
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari)
+  #choices
+  td:nth-of-type(2),
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices td:nth-of-type(2) {
+  height: 100%;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices input,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices input,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices input {
+  width: 2.1rem;
+  height: calc(var(--vh, 1vh) * 60);;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices input,
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices textarea {
+  border-bottom: none;
+  border-right: 1px solid #dbdbdb;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices input,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices textarea {
+  border-bottom: none;
+  border-right: 1px solid #dbdbdb;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices input,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices textarea {
+  border-bottom: none;
+  border-right: 1px solid #dbdbdb;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices input:focus,
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices textarea:focus {
+  border-bottom: none;
+  border-right: 1px solid #4285f4;
+  box-shadow: 1px 0 0 0 #4285f4;
+}
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices input:focus,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices textarea:focus {
+  border-bottom: none;
+  border-right: 1px solid #4285f4;
+  box-shadow: 1px 0 0 0 #4285f4;
+}
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices input:focus,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices textarea:focus {
+  border-bottom: none;
+  border-right: 1px solid #4285f4;
+  box-shadow: 1px 0 0 0 #4285f4;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices .md-form,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices .md-form,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices .md-form {
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices .md-form .prefix,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices .md-form .prefix,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices .md-form .prefix {
+  right: 2rem;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices .md-form textarea,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari)
+  #choices
+  .md-form
+  textarea,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices .md-form textarea {
+  margin-top: 2rem;
+  margin-left: 0;
+  margin-right: 2rem;
+  min-height: calc(var(--vh, 1vh) * 50);;
+  overflow: auto;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices .md-form label,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices .md-form label,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices .md-form label {
+  right: 2rem;
+  margin-top: 2rem;
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices .md-form label.active,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari)
+  #choices
+  .md-form
+  label.active,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices .md-form label.active {
+  -webkit-transform: translateX(2rem);
+  -ms-transform: translateX(2rem);
+  transform: translateX(2rem);
+}
+body#wordbank:not(.is-Chrome):not(.is-Safari) #choices .input-field,
+body#textarea-enquete:not(.is-Chrome):not(.is-Safari) #choices .input-field,
+body#pulldown:not(.is-Chrome):not(.is-Safari) #choices .input-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  padding: 15px;
+}
+body#wordbank.is-Firefox .fill_in_multi,
+body#textarea-enquete.is-Firefox .fill_in_multi,
+body#pulldown.is-Firefox .fill_in_multi {
+  margin-top: 1.5rem;
+}
+body#wordbank.is-Edge .md-form textarea,
+body#textarea-enquete.is-Edge .md-form textarea,
+body#pulldown.is-Edge .md-form textarea {
+  min-width: 300px;
+}
+body#wordbank.is-Safari #choices .prefix,
+body#textarea-enquete.is-Safari #choices .prefix,
+body#pulldown.is-Safari #choices .prefix {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+body#wordbank.is-Safari #choices td:first-of-type,
+body#textarea-enquete.is-Safari #choices td:first-of-type,
+body#pulldown.is-Safari #choices td:first-of-type {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+body#wordbank.is-Safari .drop-choice-wordbank,
+body#textarea-enquete.is-Safari .drop-choice-wordbank,
+body#pulldown.is-Safari .drop-choice-wordbank {
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+body#wordbank.is-Safari .wordbank-key,
+body#textarea-enquete.is-Safari .wordbank-key {
+  padding: 2.13rem 0.85rem;
+}
+body#pulldown.is-Safari .wordbank-key {
+  padding: 2.13rem 0.85rem;
+}
+body#pulldown.no-before-question #question_statement {
+  width: 100%;
+}
+body#pulldown.no-before-question #choices {
+  display: none !important;
+}
+body#pulldown.is-Chrome #question_statement,
+body#pulldown.is-Safari #question_statement {
+  position: relative;
+}
+body#pulldown.is-Chrome #question {
+  position: absolute;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  left: 100%;
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  text-orientation: mixed;
+  width: calc(var(--vh, 1vh) * 65);;
+}
+body#pulldown.is-Safari #question {
+  position: absolute;
+  -webkit-transform: rotate3d(0, 0, 1, 90deg);
+  transform: rotate3d(0, 0, 1, 90deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left;
+  left: 100%;
+  -webkit-writing-mode: initial;
+  -ms-writing-mode: initial;
+  writing-mode: initial;
+  text-orientation: mixed;
+  width: calc(var(--vh, 1vh) * 65);;
+  width: calc(var(--vh, 1vh) * 80);;
+}
+body#pulldown:not(.is-Chrome):not(.is-Safari) #question {
+  padding: 5px 0;
+}
+body#pulldown:not(.is-Chrome):not(.is-Safari) #question .mdb-select {
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  body#true-false #choices {
+    width: calc(var(--vh, 1vh) * 80);;
+  }
+}
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  body#match.is-Chrome #choices,
+  body#match.is-Safari #choices {
+    width: calc(var(--vh, 1vh) * 80);;
+  }
+}
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  body#wordbank.is-Chrome #choices .md-form textarea,
+  body#wordbank.is-Safari #choices .md-form textarea {
+    width: calc(var(--vh, 1vh) * 50);;
+  }
+  body#textarea-enquete.is-Chrome #choices .md-form textarea,
+  body#textarea-enquete.is-Safari #choices .md-form textarea {
+    width: calc(var(--vh, 1vh) * 50);;
+  }
+  body#pulldown.is-Chrome #choices .md-form textarea,
+  body#pulldown.is-Safari #choices .md-form textarea {
+    width: calc(var(--vh, 1vh) * 50);;
+  }
+}
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  body#wordbank.is-Chrome #choices .input-field label,
+  body#wordbank.is-Safari #choices .input-field label {
+    white-space: nowrap;
+  }
+  body#textarea-enquete.is-Chrome #choices .input-field label,
+  body#textarea-enquete.is-Safari #choices .input-field label {
+    white-space: nowrap;
+  }
+  body#pulldown.is-Chrome #choices .input-field label,
+  body#pulldown.is-Safari #choices .input-field label {
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 896px) and (orientation: landscape) {
+  body#pulldown.is-Chrome #question,
+  body#pulldown.is-Safari #question {
+    width: calc(var(--vh, 1vh) * 80);;
+  }
+}
+.choice_body {
+  padding: 32px 8px 4px;
+}
+
+#buttons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
